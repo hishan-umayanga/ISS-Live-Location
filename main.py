@@ -6,12 +6,16 @@ import urllib.request
 import json
 import requests
 
+
+
 # Define the URL to get the current location of the ISS
 url = 'http://api.open-notify.org/iss-now.json'
 
 # Create a Basemap object
 m = Basemap(projection='merc', llcrnrlat=-80, urcrnrlat=80,
             llcrnrlon=-180, urcrnrlon=180, lat_ts=20, resolution='c')
+
+
 
 # Draw coastlines, countries, and boundaries
 m.drawcoastlines()
@@ -50,10 +54,11 @@ while True:
     m.drawcoastlines()
     m.drawcountries()
     m.drawmapboundary()
-    m.plot(x, y, 'ro', markersize=10)
+    m.plot(x, y, 'bo', markersize=7)
     
-    # Add the current time to the plot title
-    plt.title(f"Current Location of the ISS as of : { datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Location : {location_name} ")
+    # Get the current time and update the plot title with the time and location of the ISS
+    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    plt.title(f"Current Location of the ISS as of {current_time}\nLocation: {location_name}")
 
     # Display the plot and pause for 1 second
     plt.show(block=False)
