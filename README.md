@@ -28,4 +28,4 @@ use the Basemap library to plot the current location of the ISS on a world map.
 
 
 
-To get the current latitude and longitude of the ISS from the URL http://api.open-notify.org/iss-now.json.The while loop continuously updates the map with the current location of the ISS. The latitude and longitude values are converted to x and y coordinates using the m() method of the Basemap object. The clf() method is used to clear the previous plot before plotting a red dot on the map at the current location of the ISS. The current time is added to the plot title using the strftime() method of the datetime module. The show() and pause() methods are used to display the plot and pause for 1 second between updates.
+To get the current latitude and longitude of the ISS from the URL http://api.open-notify.org/iss-now.json.The while loop continuously updates the map with the current location of the ISS.
